@@ -1,0 +1,43 @@
+GET http://localhost:3001/courses
+
+
+###
+
+POST http://localhost:3001/course/add
+Content-Type: application/json
+
+[
+    {
+        "course ID":1001,
+        "course name":"SE",
+        "type":"core",
+        "Number of student":28
+    },
+    {
+        "course ID":1002,
+        "course name":"CD",
+        "type":"core",
+        "Number of student":28
+    },
+    {
+        "course ID":1003,
+        "course name":"CN",
+        "type":"core",
+        "Number of student":28
+    },
+    {
+        "course ID":1004,
+        "course name":"CG",
+        "type":"core",
+        "Number of student":28
+    },
+    {
+        "course ID":1005,
+        "course name":"CC",
+        "type":"elective",
+        "Number of student":10
+    }
+]
+
+###
+DELETE http://localhost:3001/course/delete/64271b778ba18d050b942dcf
