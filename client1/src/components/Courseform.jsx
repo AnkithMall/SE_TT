@@ -40,7 +40,7 @@ const Courseform = () => {
                 var workbook = read(data, {
                     type : 'binary'
                 });
-    
+            
                 var firstSheetName = workbook.SheetNames[0];
                 //reading only first sheet data
                 var jsonData = utils.sheet_to_json(workbook.Sheets[firstSheetName]);
@@ -70,8 +70,22 @@ const Courseform = () => {
     }
     return (
         <>
-            <input type="file" id="file_upload" name="course_file" onChange={handleFileChange} />
-            <button id="submit" onClick={upload} >Upload</button>
+        <div id="mydiv">
+            <div className="container" >
+            <div className="card">
+                <h3>Upload Files</h3>
+                <div className="drop_box">
+                    <header>
+                        <h4>Select File here</h4>
+                    </header>
+                    <p>Files Supported: XLS, XLSX</p>
+                    <input type="file" id="FILEID" name="course_file" onChange={handleFileChange} />
+                    <button id="submit" class="btn" onClick={upload} >Upload</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div id="display_excel_data"></div>
         </>
 
     ) ;

@@ -27,10 +27,10 @@ app.post('/course/add', async (req,res)=> {
     const courses = await course.findByIdAndUpdate('6427f25abfde482833d6f0d9',{ "float":req.body });
     res.json(courses) ;
 })
-app.delete('/course/delete/:type', async (req,res)=> {
+/*app.delete('/course/delete/:type', async (req,res)=> {
     const courses = await course.findByIdAndDelete(req.params.type) ;
 
     res.json(courses) ;
-})
+})*/
 
 app.listen(3001,()=>console.log("server started on port 3001")) ; 
