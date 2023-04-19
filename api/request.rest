@@ -8,34 +8,34 @@ Content-Type: application/json
 
 [
     {
-        "course ID":1001,
-        "course name":"SE",
+        "course_ID":1001,
+        "course_name":"SE",
         "type":"core",
-        "Number of student":28
+        "Number_of_student":28
     },
     {
-        "course ID":1002,
-        "course name":"CD",
+        "course_ID":1002,
+        "course_name":"CD",
         "type":"core",
-        "Number of student":28
+        "Number_of_student":28
     },
     {
-        "course ID":1003,
-        "course name":"CN",
+        "course_ID":1003,
+        "course_name":"CN",
         "type":"core",
-        "Number of student":28
+        "Number_of_student":28
     },
     {
-        "course ID":1004,
-        "course name":"CG",
+        "course_ID":1004,
+        "course_name":"CG",
         "type":"core",
-        "Number of student":28
+        "Number_of_student":28
     },
     {
-        "course ID":1005,
-        "course name":"CC",
+        "course_ID":1005,
+        "course_name":"CC",
         "type":"elective",
-        "Number of student":10
+        "Number_of_student":10
     }
 ]
 

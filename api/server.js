@@ -19,17 +19,26 @@ app.get('/courses', async (req,res)=> {
 
     res.json(courses) ;
 })
+
 app.post('/course/add', async (req,res)=> {
     /*const courses = new course({
         "float":req.body
     }) ;*/
     //console.log(req.body) ;
     try{
-    const courses = await course.findByIdAndUpdate('6427f25abfde482833d6f0d9',{ "float":req.body });
-    res.json(courses) ;
+        
+        const doc = new course({ "float":req.body }) ;
+        //console.log("err") ;
+        
+        const err = doc.validateSync() ;
+        if(!!err) throw err ;
+        //console.log(err) ;
+
+        const courses = await course.findByIdAndUpdate('6427f25abfde482833d6f0d9',{ "float":req.body });
+        res.json(courses.float) ;
     }catch(err){
         //console.log("error occured") ;
-        res.status(500).send() ;
+        res.status(502).send() ;
     }
 })
 /*app.delete('/course/delete/:type', async (req,res)=> {

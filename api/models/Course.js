@@ -7,21 +7,32 @@ const Course = new Schema({
     },*/
     
     "float":[{
-    "course ID":{
+    "course_ID":{
         type:String,
         required:true
     },
-    "course name":{
+    "course_name":{
         type:String,
         required:true
     },
     "type":{
         type:String,
+        enum: ['core', 'elective'],
         required:true
     },
-    "Number of student":{
+    "Number_of_student":{
         type:Number,
-        default:0
+        default:0,
+        min:0
+    },
+    "credits":{
+        type:Number,
+        enum:[2,3,4,5],
+        required:true
+    },
+    "professor":{
+        type:String,
+        required:true
     }
 }]}) ;
 
