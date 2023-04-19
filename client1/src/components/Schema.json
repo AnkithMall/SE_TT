@@ -1,0 +1,32 @@
+{
+    "$id": "https://example.com/geographical-location.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Courses details",
+    "description": "list of courses and its details.",
+    "required": [  ],
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties" : {
+            "course ID": {
+                "description": "The unique identifier for a courses",
+                "type":"string"
+            },
+            "course name": {
+                "description": "Name of the product",
+                "type": "string"
+            },
+            "type": {
+                "type":"string",
+                "enum":["core","elective"]
+            },
+            "Number of student": {
+                "type":"number",
+                "default":0,
+                "minimum":0
+            }
+        } ,
+        "required": [ "course ID" , "course name" , "type" , "Number of student" ]
+    }
+    
+  }

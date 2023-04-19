@@ -2,13 +2,14 @@ import React from "react";
 import {  useState } from "react";
 import { read, utils } from 'xlsx';
 
+
 const Courseform = () => {
-    const [file,setFile] = useState("");
+    const [file,setFile] = useState();
+    const [isFilePicked, setIsFilePicked] = useState(false);
 
     const handleFileChange = (e) => {
-        if (e.target.files) {
-          setFile(e.target.files[0]);
-        }
+        setFile(e.target.files[0]);
+        setIsFilePicked(true) ;
     };
 
     const postApi = async (jsonData) => {
@@ -23,11 +24,15 @@ const Courseform = () => {
             //let resJson = await res.json();
             if (res.status === 200) {
               alert("successfully uploaded");
-            } else {
+            } else if(res.status === 500 ){
+                alert("Details are not stored , please check xl sheet data format !") ;
+            }else
+            {
               alert("Some error occured");
             }
           } catch (err) {
             console.log(err);
+            alert(err) ;
           }
     };
 
@@ -44,9 +49,11 @@ const Courseform = () => {
                 var firstSheetName = workbook.SheetNames[0];
                 //reading only first sheet data
                 var jsonData = utils.sheet_to_json(workbook.Sheets[firstSheetName]);
+                
                 alert(JSON.stringify(jsonData));
                 //displaying the json result into HTML table
                 //displayJsonToHtmlTable(jsonData);
+                
                 postApi(JSON.stringify(jsonData)) ;
             }
         }catch(e){
@@ -55,7 +62,7 @@ const Courseform = () => {
     }
     
     const upload =  () => {
-        if(file.length === 0){
+        if(!isFilePicked){
             alert("Please choose any file...");
             return;
         }

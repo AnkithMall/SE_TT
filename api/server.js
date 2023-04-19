@@ -23,9 +23,14 @@ app.post('/course/add', async (req,res)=> {
     /*const courses = new course({
         "float":req.body
     }) ;*/
-    console.log(req.body) ;
+    //console.log(req.body) ;
+    try{
     const courses = await course.findByIdAndUpdate('6427f25abfde482833d6f0d9',{ "float":req.body });
     res.json(courses) ;
+    }catch(err){
+        //console.log("error occured") ;
+        res.status(500).send() ;
+    }
 })
 /*app.delete('/course/delete/:type', async (req,res)=> {
     const courses = await course.findByIdAndDelete(req.params.type) ;
