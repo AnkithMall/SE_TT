@@ -2,6 +2,8 @@ import React from "react";
 import {  useState } from "react";
 import { read, utils } from 'xlsx';
 import JsonTable from './JsonTable' ;
+import {Form,Button,Row} from 'react-bootstrap';
+
 
 
 const Courseform = () => {
@@ -63,7 +65,8 @@ const Courseform = () => {
             },
             error => {
                 //setStatus(status) ;
-                console.log(error);
+               // alert(error);
+                //setMessage("* Server failed");
             });
             //alert(res.status);
             
@@ -72,7 +75,7 @@ const Courseform = () => {
             alert(err) ;
           }
     };
-
+    
     const excelFileToJSON = async () => {
         try {
             var reader = new FileReader();
@@ -119,20 +122,28 @@ const Courseform = () => {
             setMessageColor("red") ;
         }
     }
+
     return (
         <>
-        <div class="">
-            <div class="container" style={{width: "34%" , margin: "20px auto" }}>
-                <label for="FILEID" >Select file :&nbsp;</label>
+    
+            <div className="container" style={{width: "34%" , margin: "20px auto" }}>
+               {/* <label for="FILEID" >Select file :&nbsp;</label>
                 <input type="file" id="FILEID" name="course_file" onChange={handleFileChange} />
-                <button id="submit" onClick={upload}>Upload</button>
-                <br/><br/>
+    <button onClick={upload}>Upload</button>*/}
+                <h2 className="mb-3">Course Form</h2>
+                <Row className="mb-3">
+                    <Form.Group controlId="formFile" className="mb-3">
+                        <Form.Label >Select file </Form.Label>
+                        <Form.Control type="file" name="course_file" onChange={handleFileChange} />
+                    </Form.Group>
+                    <Button variant="primary" onClick={upload} >Upload</Button>
+                </Row>
+                
+                
                 <p style={{color:messageColor}}>&nbsp; {message}</p>
             </div>
-            
-        </div>
         <div id="display_excel_data">
-            {jsonData && <JsonTable data={resJson} />}
+            {jsonData && <JsonTable data={resJson} title={"Updated Course Table"}/>}
         </div>
         </>
     ) ;

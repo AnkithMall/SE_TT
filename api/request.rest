@@ -11,33 +11,79 @@ Content-Type: application/json
         "course_ID":1001,
         "course_name":"SE",
         "type":"core",
-        "Number_of_student":28
+        "Number_of_student":28,
+        "credits":2,
+        "professor":"Prof salman"
     },
     {
         "course_ID":1002,
         "course_name":"CD",
         "type":"core",
-        "Number_of_student":28
+        "Number_of_student":28,
+        "credits":2,
+        "professor":"prof sobha"
     },
     {
         "course_ID":1003,
         "course_name":"CN",
         "type":"core",
-        "Number_of_student":28
+        "Number_of_student":28,
+        "credits":4,
+        "professor":"prof atul"
     },
     {
         "course_ID":1004,
         "course_name":"CG",
         "type":"core",
-        "Number_of_student":28
+        "Number_of_student":28,
+        "credits":4,
+        "professor":"prof swami"
     },
     {
         "course_ID":1005,
         "course_name":"CC",
         "type":"elective",
-        "Number_of_student":10
+        "Number_of_student":10,
+        "credits":3,
+        "professor":"prof ravi"
     }
 ]
 
 ###
-DELETE http://localhost:3001/course/delete/64271b778ba18d050b942dcf
+GET http://localhost:3001/classes
+
+###
+
+POST http://localhost:3001/classes/add
+Content-Type: application/json
+
+[
+    {
+        "class_number":2,
+        "Capacity":50,
+        "slot1":{
+            "status":true
+        },
+        "slot2":{
+            "status":"FALSE"
+        },
+        "slot3":{
+            "status":true
+        },
+        "slot4":{
+            "status":false
+        },
+        "slot5":{
+            "status":false
+        },
+        "slot6":{
+            "status":true
+        },
+        "slot7":{
+            "status":true
+        },
+        "slot8":{
+            "status":false
+        }
+    }
+]

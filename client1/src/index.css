@@ -1,29 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-header{
-    width:100%;
-    height:100px;
-    background-color:#E6E6FA;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 170px;
 }
 
-.logo{
-    width: 40px;
-    height: 60px;
-    color:#663399;
-    font-size:25px;
-    font-family:verdana;
-    text-align:left;
-    margin-top:0px;
-    float:left;
-    margin:0px;
-    line-height:50px;
-    padding-left:9px;
-}
-img {
 
-max-width:50px;
-max-height:50px;
-}
 table {
     border-collapse: collapse;
     width: 100%;
@@ -42,94 +26,3 @@ table {
     font-weight: bold;
     text-transform: uppercase;
   }
-
-
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: "Poppins", sans-serif;
-}
-
-body {
-    background-color: #f7f7f7;
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #333;
-    margin: 20px 0;
-  }
-  
-  p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  
-  button {
-    padding: 7px 17px;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0069d9;
-  }
-  
-  
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 24px;
-    }
-    
-    p {
-      font-size: 16px;
-    }
-    
-  }
-  
-input[type=file]::file-selector-button {
-margin-right: 20px;
-border: none;
-background: #084cdf;
-padding: 5px 10px;
-border-radius: 10px;
-color: #fff;
-cursor: pointer;
-transition: background .2s ease-in-out;
-}
-
-input[type=file]::file-selector-button:hover {
-background: #0d45a5;
-}
-
-ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
-background-color: #333;
-}
-
-li {
-float: left;
-}
-
-li a {
-display: block;
-color: white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
-}
-
-li a:hover {
-background-color: #111;
-}
